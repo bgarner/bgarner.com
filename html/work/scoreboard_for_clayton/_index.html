@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css">
+        <link rel="stylesheet" type="text/css" href="/css/logo-landscape.css">
+        <link rel="stylesheet" type="text/css" href="/css/boxroll-slider.css">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<style>
+		/* ==========================================================================
+		   Helper classes
+		   ========================================================================== */
+
+		/*
+		 * Image replacement
+		 */
+
+		.ir {
+		background-color: transparent;
+		border: 0;
+		overflow: hidden;
+		    /* IE 6/7 fallback */
+		    *text-indent: -9999px;
+		}
+		.ir:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+		}
+		/*
+		 * Hide from both screenreaders and browsers: h5bp.com/u
+		 */
+
+		.hidden {
+		display: none !important;
+		visibility: hidden;
+		}
+		/*
+		 * Hide only visually, but have it available for screenreaders: h5bp.com/v
+		 */
+
+		.visuallyhidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		}
+		/*
+		 * Extends the .visuallyhidden class to allow the element to be focusable
+		 * when navigated to via the keyboard: h5bp.com/p
+		 */
+
+		.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+		}
+		/*
+		 * Hide visually and from screenreaders, but maintain layout
+		 */
+
+		.invisible {
+		visibility: hidden;
+		}
+		/*
+		 * Clearfix: contain floats
+		 *
+		 * For modern browsers
+		 * 1. The space content is one way to avoid an Opera bug when the
+		 *    `contenteditable` attribute is included anywhere else in the document.
+		 *    Otherwise it causes space to appear at the top and bottom of elements
+		 *    that receive the `clearfix` class.
+		 * 2. The use of `table` rather than `block` is only necessary if using
+		 *    `:before` to contain the top-margins of child elements.
+		 */
+
+		.clearfix:before, .clearfix:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+		}
+		.clearfix:after {
+		clear: both;
+		}
+		/*
+		 * For IE 6/7 only
+		 * Include this rule to trigger hasLayout and contain floats.
+		 */
+
+		.clearfix {
+		 *zoom: 1;
+		}        
+		            #gallery{
+		                background-color: #414141;                
+		                color: #fff;
+		                font: normal 22px Arial, sans-serif;
+
+		            }
+
+		            #time{ color: #999999;}
+
+		            .item{ background-color: black;}
+
+		        </style>    
+		    </head>
+
+		    <body>
+		        <div id="gallery" class="slider"></div>
+		        <script type="text/javascript" src="/js/jquery.min.js"></script>
+		        <script type="text/javascript" src="/js/modernizr.custom.43373.js"></script>
+		        <script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+		        <script type="text/javascript" src="/js/jquery.boxroll-slider.js"></script>
+		        <script type="text/javascript">
+
+		        $(document).ready(function() {  
+
+		            var sport = "";
+		            var feed ="http://thecompleteexperience.ca/feed/all_scores.xml";
+		            var timezoneoffset = -2;
+
+		            var setupScores = function(){
+		                $.get(feed, function(d){  
+
+		                    $(d).find('game').each(function(){  
+
+		                        var $game = $(this);   
+		                        var id = $game.attr("id"); 
+		                        var sport = $game.attr("sport");                      
+		                        var home = $game.find('home').text();  
+		                        var home_score = $game.find('home_score').text();  
+		                        var visitor = $game.find('visitor').text();  
+		                        var visitor_score = $game.find('visitor_score').text();  
+
+		                        if($game.attr("type") == "upcoming" ){
+		                            var gametime = $game.find('game_time').text(); 
+		                            var timeparts = gametime.split(":");     
+		                            gametime = (Number(timeparts[0]) + Number(timezoneoffset)) + ":" + timeparts[1];
+		                        } else {
+		                            var gametime = $game.find('game_time').text();  
+		                        }
+
+
+		                        var period = $game.find('period').text();
+		                        var note = $game.find('note').text();
+		                        if( note =="** CONFIRMED **"){
+		                            note = "";
+		                        }
+		                        if(period=="0 Period"){
+		                            period="Starting Now";
+		                        }
+
+		                        var html = "<div class='item' id='game"+id+"'>";
+
+		                        html += //"<img src='/images/"+sport+"/logo_"+sport+"_sm.png' />" +
+
+		                                "<span class='minilogo "+sport+"-"+home+"'></span>" +
+		                                "<span class='team home team-name'>"+home+"</span><span class='score' id='hscore'>"+home_score+"</span>" +
+
+		                                "<span class='minilogo "+sport+"-"+visitor+"'>"+
+		                                "</span><span class='team visitor team-name'>"+visitor+"</span><span class='score' id='vscore'>"+visitor_score+"</span>"+
+
+		                                "<span class='period' id='time'>"+gametime+" "+period+"</span>";
+
+
+		                        html += '</div>';  
+
+		                        $('#gallery').append($(html));  
+
+		                        $('#gallery').boxRollSlider();
+
+		                    });  
+
+		                });  
+
+		            }; //send setup
+
+
+		            var updateScores =  function(){
+
+		                $.get(feed, function(d){ 
+		                    $(d).find('game').each(function(){ 
+		                        var $game = $(this);   
+		                        var id = $game.attr("id");  
+		                        var home = $game.find('home').text();  
+		                        var home_score = $game.find('home_score').text();  
+		                        var visitor = $game.find('visitor').text();  
+		                        var visitor_score = $game.find('visitor_score').text();  
+		                        //var gametime = $game.find('game_time').text();  
+
+		                        if($game.attr("type") == "upcoming" ){
+		                            var gametime = $game.find('game_time').text(); 
+		                            var timeparts = gametime.split(":");     
+		                            gametime = (Number(timeparts[0]) + Number(timezoneoffset)) + ":" + timeparts[1];
+		                        } else {
+		                            var gametime = $game.find('game_time').text();  
+		                        }
+
+		                        var period = $game.find('period').text();
+		                        var note = $game.find('note').text();
+
+		                        if(period=="0 Period"){
+		                            period="Starting Now";
+		                        }
+
+		                        $('#game'+id+' #hscore' ).html(home_score);
+		                        $('#game'+id+' #vscore' ).html(visitor_score);
+		                        $('#game'+id+' #time' ).html(gametime+ " " +period);
+
+		                    });  
+		                });
+
+
+		            }; //end update
+
+
+		            setupScores();
+
+
+		            setInterval(function(){ setupScores(); },3600000);
+		            setInterval(function(){ updateScores(); },5000);
+
+
+
+		        });
+
+
+
+
+
+		        </script>
+
+			</body>
+
+</html>

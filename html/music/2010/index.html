@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>2010</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="openmediaplayer/soundmanager/script/soundmanager2.js"></script>
+    <script type="text/javascript" src="openmediaplayer/openMediaPlayer-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="openmediaplayer/css/style.css"/>
+
+    <script type="text/javascript" src="openmediaplayer-demo/cufon.js"></script>
+
+    <script type="text/javascript">
+    
+    soundManager.flashVersion = 9;
+    soundManager.useHighPerformance = true;
+    soundManager.wmode = 'transparent';
+    soundManager.useFastPolling = true;
+    soundManager.url = 'openmediaplayer/soundmanager/swf/';
+    soundManager.debugMode = false;
+
+    $(document).ready(function(){
+         soundManager.onload = function(){
+                openMediaPlaylist({
+                    autoPlay:true,
+                    style: 'fullscreen'
+                });
+          }
+    });
+
+    </script>
+    
+    
+    <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20025597-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body>
+
+<!-- The playlist should always have class = "playlist"
+     and be wrapped in a div with class="openPlayerContent"
+     -->
+
+<!-- The fullscreen player needs each mp3 to have a rel
+     attribute with a link to the background image
+     that will be used for that song -->
+
+<div class="openPlayerContent">
+    <ul class="playlist">
+        <li><a href="assets/cutoudown.mp3" rel="assets/50786-JOHNNY_CASH_04.jpg">Johnny Cash &mdash; God&rsquo;s Gonna Cut You Down</a></li>
+        <li><a href="assets/readytostart.mp3" rel="assets/arcade_fire_2008.jpg">Arcade Fie &mdash; Ready To Start</a></li>
+        <li><a href="assets/sexbobomb.mp3" rel="assets/sex-bom-omb.jpg">Sex Bob-omb &mdash; We Are Sex Bob-omb</a></li>
+        <li><a href="assets/03Evidence.mp3" rel="assets/jimmy-eat-world-image.jpg">Jimmy Eat World &mdash; Evidence</a></li>
+        <li><a href="assets/05Stylo.mp3" rel="assets/6480_gorillaz_hd_wallpapers.jpg">Gorillaz Ft. Bobby Womack &amp; Mos Def &mdash; Stylo</a></li>
+        <li><a href="assets/joad.mp3" rel="assets/hr-springsteendublin2.jpg">Bruce Springsteen &mdash; The Ghost of Tom Joad</a></li>
+        <li><a href="assets/06BytheSword.mp3" rel="assets/Slash_wallpaper_by_starchild_rocks.jpg">Slash Ft. Andrew Stockdale &mdash; By The Sword</a></li>
+        <li><a href="assets/10StadiumLove.mp3" rel="assets/metric_fantasies_press_shot_norman_wong_001_colorlow.jpg">Metric &mdash; Stadium Love</a></li>
+        <li><a href="assets/CheckMyBrain.mp3" rel="assets/ucp54-004-MF.jpg">Alice In Chains &mdash; Check My Brain</a></li>
+        <li><a href="assets/13RightWhereItBelongs.mp3" rel="assets/NINEINCHNAILS5.jpg">Nine Inch Nails &mdash; Right Where It Belongs</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

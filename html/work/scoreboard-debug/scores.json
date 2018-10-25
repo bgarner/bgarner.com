@@ -1,0 +1,127 @@
+{
+"sports": {
+"hockey": {
+"4": {
+"active": "false",
+"startTime": "2015-10-22T23:00:00",
+"gameStatus": "Pre-Game",
+"homeId": 4966,
+"homeTeam": "New York",
+"homeNickname": "Rangers",
+"homeLogo": "/images/nhl/new-york-rangers.svg",
+"awayId": 4977,
+"awayTeam": "Arizona",
+"awayNickname": "Coyotes",
+"awayLogo": "/images/nhl/arizona-coyotes.svg"
+},
+"5": {
+"active": "false",
+"startTime": "2015-10-22T23:00:00",
+"gameStatus": "Pre-Game",
+"homeId": 4969,
+"homeTeam": "Pittsburgh",
+"homeNickname": "Penguins",
+"homeLogo": "/images/nhl/pittsburgh-penguins.svg",
+"awayId": 4962,
+"awayTeam": "Dallas",
+"awayNickname": "Stars",
+"awayLogo": "/images/nhl/dallas-stars.svg"
+},
+"6": {
+"active": "false",
+"startTime": "2015-10-22T23:30:00",
+"gameStatus": "Pre-Game",
+"homeId": 4967,
+"homeTeam": "Ottawa",
+"homeNickname": "Senators",
+"homeLogo": "/images/nhl/ottawa-senators.svg",
+"awayId": 4964,
+"awayTeam": "New Jersey",
+"awayNickname": "Devils",
+"awayLogo": "/images/nhl/new-jersey-devils.svg"
+},
+"7": {
+"active": "false",
+"startTime": "2015-10-23T00:00:00",
+"gameStatus": "Pre-Game",
+"homeId": 4983,
+"homeTeam": "Minnesota",
+"homeNickname": "Wild",
+"homeLogo": "/images/nhl/minnesota-wild.svg",
+"awayId": 4982,
+"awayTeam": "Columbus",
+"awayNickname": "Blue Jackets",
+"awayLogo": "/images/nhl/columbus-blue-jackets.svg"
+},
+"8": {
+"active": "false",
+"startTime": "2015-10-23T00:00:00",
+"gameStatus": "Pre-Game",
+"homeId": 4980,
+"homeTeam": "Nashville",
+"homeNickname": "Predators",
+"homeLogo": "/images/nhl/nashville-predators.svg",
+"awayId": 4978,
+"awayTeam": "Anaheim",
+"awayNickname": "Ducks",
+"awayLogo": "/images/nhl/anaheim-ducks.svg"
+},
+"9": {
+"active": "false",
+"startTime": "2015-10-23T00:30:00",
+"gameStatus": "Pre-Game",
+"homeId": 4957,
+"homeTeam": "Chicago",
+"homeNickname": "Blackhawks",
+"homeLogo": "/images/nhl/chicago-blackhawks.svg",
+"awayId": 4979,
+"awayTeam": "Florida",
+"awayNickname": "Panthers",
+"awayLogo": "/images/nhl/florida-panthers.svg"
+},
+"10": {
+"active": "false",
+"startTime": "2015-10-23T02:00:00",
+"gameStatus": "Pre-Game",
+"homeId": 4975,
+"homeTeam": "Vancouver",
+"homeNickname": "Canucks",
+"homeLogo": "/images/nhl/vancouver-canucks.svg",
+"awayId": 4976,
+"awayTeam": "Washington",
+"awayNickname": "Capitals",
+"awayLogo": "/images/nhl/washington-capitals.svg"
+},
+"11": {
+"active": "false",
+"startTime": "2015-10-23T02:30:00",
+"gameStatus": "Pre-Game",
+"homeId": 4971,
+"homeTeam": "San Jose",
+"homeNickname": "Sharks",
+"homeLogo": "/images/nhl/san-jose-sharks.svg",
+"awayId": 4961,
+"awayTeam": "Los Angeles",
+"awayNickname": "Kings",
+"awayLogo": "/images/nhl/los-angeles-kings.svg"
+}
+},
+"football": {
+"0": {
+"active": "false",
+"startTime": "2015-10-23T00:25:00",
+"gameStatus": "Pre-Game",
+"homeId": 359,
+"homeTeam": "San Francisco",
+"homeNickname": "49ers",
+"homeScore": 0,
+"homeLogo": "/images/nfl/san-francisco-49ers.svg",
+"awayId": 361,
+"awayTeam": "Seattle",
+"awayNickname": "Seahawks",
+"awayScore": 0,
+"awayLogo": "/images/nfl/seattle-seahawks.svg"
+}
+}
+}
+}

@@ -1,0 +1,33 @@
+/* CSS Document */
+
+  #least {
+    max-width: 1200px;
+  width:100%;
+  padding: 0;
+  background-color:#fff;
+}
+#least .least-gallery li {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0px 15px 0px 0px;
+	
+  /* @end */
+}
+
+#least .least-gallery .thumbnail {
+  position: relative;
+  width: 132px;
+  height:132px;
+ 
+}
+#least .least-gallery li .thumbnail a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
