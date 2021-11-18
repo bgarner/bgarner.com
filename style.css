@@ -35,6 +35,11 @@ body{
 	color: #666;
 }
 
+.footnotes p {
+	font-size: 11px !important;
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+
 #nav{ 
 	position: absolute;
 	top: 0px;
@@ -95,7 +100,7 @@ body{
 	font-weight: normal;
 	text-transform: normal;
 	letter-spacing: normal;
-	line-height: 1.6em;
+	line-height: 1.8em;
 	color: #666;		
 }
 	
@@ -110,13 +115,25 @@ body{
 	color: #444;
 }
 	
+#content p.first:first-letter {
+	font-size: 70px; 
+	font-weight: thin; 
+	float: left; 
+	padding: 0px 10px 0px 0px; 	
+	font-family: Georgia, serif;
+	text-transform: normal;
+	letter-spacing: normal;
+	line-height: .8em;
+	color: #444;
+}
 #content p.sub:first-letter {font-size: 70px; font-weight: thin; float: left; padding: 7px 15px 0px 0px;}
 #content p.sub.yellow:first-letter{color:#F7BC0E;}
 #content p.sub.blue:first-letter{color: #00389B;}
 #content p.sub.green:first-letter{color: #65BC00;}
 #content p.sub.red:first-letter{color: #E20000;}
 #content p.sub.purple:first-letter{color: #b70ddd;}
-		
+
+
 		
 #content h1{	
 	font-family: Georgia, serif;
@@ -128,6 +145,13 @@ body{
 	line-height: 1.2em;
 	color: #000;
 }
+
+h1.center, h4.center{
+	text-align: center !important;
+}
+h4.right {
+	text-align: right !important;
+}
 		
 #content a, #sidebar a{
 	text-decoration: none;
@@ -135,8 +159,26 @@ body{
 	border-bottom: 1px solid #0f8ea7;
 	color: #000;
 }
-	
+
+		
 #content a:hover, #sidebar a:hover{ background-color: #e6f8ff; }
+
+sub{
+	padding: 0px 2px 0px 2px;
+}
+
+sub a{
+	text-decoration: none;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 100;
+	border-bottom: none !important;
+	color: rgb(255, 0, 0);
+}
+
+sub a:hover{
+	background-color: #F7BC0E !important;
+}
 		
 hr{
 	border: 1px dotted #eee;
@@ -145,4 +187,7 @@ hr{
 pre {
   font-family: "Courier New", Courier, monospace;
 }
-	
+
+em {
+	font-style: italic;
+}
